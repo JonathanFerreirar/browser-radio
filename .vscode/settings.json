@@ -1,0 +1,18 @@
+{
+  "prettier.configPath": "./.prettierrc.json",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "soucer.fixAll.eslint": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.rulers": [
+    80
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "cn\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*).*?[\"'`]"
+    ]
+  ],
+}
