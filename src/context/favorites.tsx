@@ -4,38 +4,40 @@ import React from 'react'
 
 import { Radio } from '@/types/radios'
 
-type Favorites = Pick<
+export type Favorite = Pick<
   Radio,
-  'url' | 'country' | 'url_resolved' | 'name' | 'stationuuid'
+  'url' | 'country' | 'url_resolved' | 'name' | 'stationuuid' | 'tags'
 >
 
-type FavoritesContextProps = {
-  favorites: Favorites[]
-  removeFavorite: (url: string) => void
-  addFavorite: (favorite: Favorites) => void
+export type FavoritesContextProps = {
+  favorites: Favorite[]
+  removeFavorite: (stationuuid: string) => void
+  addFavorite: (favorite: Favorite) => void
   editFavorite: (
     stationuuid: string,
-    updatedFavorite: Partial<Favorites>,
+    updatedFavorite: Partial<Favorite>,
   ) => void
 }
 
 const FavoritesContext = React.createContext({} as FavoritesContextProps)
 
 export const FavoritesProvider = ({ children }: React.PropsWithChildren) => {
-  const [favorites, setFavorires] = React.useState([] as Favorites[])
+  const [favorites, setFavorires] = React.useState([] as Favorite[])
 
-  const addFavorite = (favorite: Favorites) => {
-    setFavorires([favorite, ...favorites])
+  const addFavorite = (favorite: Favorite) => {
+    setFavorires([...favorites, favorite])
   }
-  const removeFavorite = (url: string) => {
-    const newFavorites = favorites.filter((favorite) => favorite.url !== url)
+  const removeFavorite = (stationuuid: string) => {
+    const newFavorites = favorites.filter(
+      (favorite) => favorite.stationuuid !== stationuuid,
+    )
 
     setFavorires(newFavorites)
   }
 
   const editFavorite = (
     stationuuid: string,
-    updatedFavorite: Partial<Favorites>,
+    updatedFavorite: Partial<Favorite>,
   ) => {
     const favoriteToEdit = favorites.map((favorite) =>
       favorite.stationuuid === stationuuid

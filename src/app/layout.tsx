@@ -1,14 +1,17 @@
 import './globals.css'
 
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 
 import LeftSide from '@/components/layout/leftSide'
 import { FavoritesProvider } from '@/context/favorites'
 import { RadiosProvider } from '@/context/radios'
 import { cn } from '@/lib/utils'
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
+})
 
 export const metadata: Metadata = {
   title: 'Radio Browser',
@@ -22,10 +25,10 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <main
           className={cn(
-            'grid grid-cols-2 grid-rows-1 min-h-screen min-w-screen bg-white',
+            'flex items-center justify-center min-h-screen min-w-screen bg-white',
           )}
         >
           <RadiosProvider>

@@ -1,29 +1,29 @@
 'use client'
 
-import React from 'react'
-
 import { Icons } from '@/app/icons'
-import { Button } from '@/primitive/ui/button'
+import { Button, ButtonProps } from '@/primitive/ui/button'
 
 import { useAudioPlayer } from './audioPlayer.hooks'
 
 export type AudioPlayerProps = {
+  id: string
   src: string
   className?: string
-} & React.HTMLProps<HTMLAudioElement>
+} & ButtonProps
 
-export const AudioPlayer = ({ src, ...rest }: AudioPlayerProps) => {
-  const { audioRef, isPlaying, togglePlay } = useAudioPlayer()
+export const AudioPlayer = ({ id, src, ...rest }: AudioPlayerProps) => {
+  const { playingStationuuid, audioRef, togglePlay } = useAudioPlayer(src, id)
 
   return (
     <Button
+      {...rest}
       type="button"
       variant="default"
       onClick={togglePlay}
       aria-label="Play or pause audio"
       className="size-12 rounded-full"
     >
-      {isPlaying ? (
+      {playingStationuuid === id ? (
         <Icons.stop
           size={30}
           className="text-secondary"
@@ -36,7 +36,12 @@ export const AudioPlayer = ({ src, ...rest }: AudioPlayerProps) => {
           data-testid="test_audio_player_button_play"
         />
       )}
-      <audio ref={audioRef} src={src || ''} {...rest} />
+      <audio
+        ref={audioRef}
+        src={src || ''}
+        // eslint-disable-next-line tailwindcss/no-custom-classname
+        className="audio"
+      />
     </Button>
   )
 }
