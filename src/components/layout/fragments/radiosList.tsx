@@ -31,10 +31,10 @@ export const RadiosList = () => {
 
   return (
     <div className="max-h-[80vh] space-y-5 overflow-y-auto px-3 py-5">
-      {radios.map((radio, index) => (
+      {radios.map((radio) => (
         <Station
           name={radio.name}
-          key={`radio.name - ${index}`}
+          key={`${radio.stationuuid}`}
           isFavorite={radio.isFavorite}
           onClick={() => addRadioToFavorite(radio)}
           fallBack={`Station - ${radio.stationuuid}`}

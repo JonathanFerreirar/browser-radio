@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import Station from '@/components/station/station'
+import { AudioPlayer } from '@/components/audioPlayer'
 import { useFavorites } from '@/context/favorites'
 
 type Home = {
@@ -13,12 +13,11 @@ const Home = () => {
   const { favorites } = useFavorites()
   return (
     <div className="w-full">
-      {favorites.map((favorite, index) => {
+      {favorites.map((favorite) => {
         return (
-          <Station
-            name={favorite.name}
-            key={`radio.name - ${index}`}
-            fallBack={`Station - ${favorite.stationuuid}`}
+          <AudioPlayer
+            key={`${favorite.stationuuid}`}
+            src={String(favorite.url_resolved)}
           />
         )
       })}
