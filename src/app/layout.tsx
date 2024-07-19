@@ -3,7 +3,9 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
-import LeftSide from '@/layout/leftSide'
+import LeftSide from '@/components/layout/leftSide'
+import { FavoritesProvider } from '@/context/favorites'
+import { RadiosProvider } from '@/context/radios'
 import { cn } from '@/lib/utils'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -26,8 +28,12 @@ const RootLayout = ({
             'grid grid-cols-2 grid-rows-1 min-h-screen min-w-screen bg-white',
           )}
         >
-          <LeftSide />
-          {children}
+          <RadiosProvider>
+            <FavoritesProvider>
+              <LeftSide />
+              {children}
+            </FavoritesProvider>
+          </RadiosProvider>
         </main>
       </body>
     </html>

@@ -1,4 +1,4 @@
-import React from 'react'
+'use client'
 
 import { Input, InputProps } from '@/primitive/ui/input'
 
