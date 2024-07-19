@@ -3,6 +3,7 @@
 import React from 'react'
 
 import { AudioPlayer } from '@/components/audioPlayer'
+import { ErrorBoundary } from '@/components/errorBoundary'
 import { useFavorites } from '@/context/favorites'
 
 type Home = {
@@ -15,10 +16,12 @@ const Home = () => {
     <div className="w-full">
       {favorites.map((favorite) => {
         return (
-          <AudioPlayer
+          <ErrorBoundary
             key={`${favorite.stationuuid}`}
-            src={String(favorite.url_resolved)}
-          />
+            errorMessage="error no audio"
+          >
+            <AudioPlayer src={String(favorite.url_resolved)} />
+          </ErrorBoundary>
         )
       })}
     </div>
