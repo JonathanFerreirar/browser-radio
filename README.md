@@ -74,4 +74,8 @@
   - Create new state to handle result of the search values
   - `commithash: [add_commit]`
 
+   - **Improving useRadioSearch hook**
+  - Adjust useRadioSearch by creating a new hook to split the responsibility and make the code more reusable
+  - `commithash: [add_commit]`
+
 ---
