@@ -1,7 +1,15 @@
 import { IconBaseProps } from 'react-icons'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 import { BsStar, BsStarFill } from 'react-icons/bs'
-import { FaCheck, FaPlay, FaSearch, FaStop, FaTrash } from 'react-icons/fa'
+import {
+  FaCheck,
+  FaLongArrowAltLeft,
+  FaLongArrowAltRight,
+  FaPlay,
+  FaSearch,
+  FaStop,
+  FaTrash,
+} from 'react-icons/fa'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { RiPencilFill } from 'react-icons/ri'
 
@@ -9,6 +17,8 @@ import { cn } from '@/lib/utils'
 
 export const Icons = {
   burgue: GiHamburgerMenu,
+  arrowLeft: FaLongArrowAltLeft,
+  arrowRight: FaLongArrowAltRight,
   check: FaCheck,
   pencil: RiPencilFill,
   trash: FaTrash,

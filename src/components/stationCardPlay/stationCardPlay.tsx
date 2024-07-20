@@ -24,17 +24,23 @@ const StationCardPlay = ({
     <div
       {...props}
       className={cn(
-        'flex w-full items-center justify-between rounded-sm bg-white border-secondary border p-5',
+        'flex w-full items-center justify-between rounded-sm bg-white border-secondary border px-1 py-5 sm:p-5',
         props.className,
       )}
     >
       <div className="flex items-start gap-4">
         <AudioPlayer id={stationuuid} isHls={!!favorite.hls} src={url} />
         <div className="flex flex-col items-start">
-          <label aria-label="Name of station" htmlFor={stationuuid}>
+          <label
+            aria-label="Name of station"
+            className="max-sm:max-w-[150px] max-sm:truncate"
+            htmlFor={stationuuid}
+          >
             {name}
           </label>
-          <span>{tags || country}</span>
+          <span className="max-sm:max-w-[150px] max-sm:truncate">
+            {tags || country}
+          </span>
         </div>
       </div>
 

@@ -88,4 +88,10 @@
 
     - `commithash: [commit_hash]`
 
+     - **Adjust mobile site version**
+    - create `RadiosListSheet` component to be able, add a radio on mobile, adjust page to render mobile with correctly, add two new icons `arrowLeft`and `arrowRight`, to use on sheet trigger.
+
+    - `commithash: [commit_hash]`
+
+
 

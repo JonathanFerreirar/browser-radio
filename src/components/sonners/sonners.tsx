@@ -4,15 +4,17 @@ import { Icons } from '@/app/icons'
 
 export const Sonners = {
   favorited: () => (
-    <div className="flex max-w-[200px] items-center justify-center gap-3">
-      <Icons.favorite />
-      <span className="text-xs font-semibold">Adicionado aos favoritos</span>
+    <div className="hidden max-w-[200px] items-center justify-center gap-3 lg:flex">
+      <Icons.favorite className="text-white lg:text-black" />
+      <span className="text-xs font-semibold text-white lg:text-black">
+        Adicionado aos favoritos
+      </span>
     </div>
   ),
   unfavorited: () => (
-    <div className="flex max-w-[200px] items-center justify-center gap-3 rounded-lg">
-      <Icons.noFavorite className="fill-red-900 text-red-900" />
-      <span className="text-xs font-semibold text-red-900">
+    <div className="hidden max-w-[200px] items-center justify-center gap-3 rounded-lg lg:flex">
+      <Icons.noFavorite className="text-red-500  lg:text-red-900" />
+      <span className="text-xs font-semibold text-red-500 lg:text-red-900">
         Item removido dos favoritos
       </span>
     </div>

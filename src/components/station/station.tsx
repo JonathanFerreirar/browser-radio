@@ -18,7 +18,7 @@ const Station = ({ name, fallBack, isFavorite, ...props }: StationProps) => {
       <Button
         {...props}
         className={cn(
-          'w-full justify-start  p-4 py-6 outline outline-1 outline-secondary hover:outline-[3px]',
+          'w-full justify-start py-8 px-5 lg:p-4 lg:py-6 outline outline-1 outline-secondary hover:outline-[3px]',
           props.className,
         )}
       >

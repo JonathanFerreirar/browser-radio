@@ -46,6 +46,9 @@ const RootLayout = ({
           position="top-right"
           toastOptions={{
             unstyled: true,
+            style: {
+              marginTop: 15,
+            },
           }}
         />
       </body>

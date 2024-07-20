@@ -12,7 +12,7 @@ import {
   SheetTrigger,
 } from '@/primitive/ui/sheet'
 
-import { EditStationForm } from '../forms/editStation'
+import { EditStationForm } from '../../forms/editStation'
 
 type EditStationSheetProps = React.PropsWithChildren & {
   favorite: Favorite
