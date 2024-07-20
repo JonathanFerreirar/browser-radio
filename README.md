@@ -59,11 +59,11 @@
   - Implement search that sets the search value in the URL.
   - Add new package `useDebounce` to handle search values better.
   - Adjust readme
-  - `commithash: [ec48059321ef9a8b99ba4af846f6dc4a97c58255]`
+  - `commithash: ec48059321ef9a8b99ba4af846f6dc4a97c58255`
 
-  - **Create Search radio function**
-  - Create getRadioByName function
-    - `commithash: [add_commit]`
+
+  - **Create getRadioByName function**
+    - `commithash: 81de25965dcd0eeb8ff3adf1943b577d201a426d`
 
   - **Improving Search radio function**
   - Adjust eslint rule to permite use '_' as unused variable
@@ -72,10 +72,10 @@
   - Fix layout shift on radiosList
   - Create useRadioSearch hook to handle search on search component
   - Create new state to handle result of the search values
-  - `commithash: [add_commit]`
+  - `commithash: 946c4f713cec1ae4080f2b4f505a0a255d38d3f0`
 
    - **Improving useRadioSearch hook**
   - Adjust useRadioSearch by creating a new hook to split the responsibility and make the code more reusable
-  - `commithash: [add_commit]`
+  - `commithash: 1ab518358a873041b88079bddc4cdb091de9bb08`
 
 ---

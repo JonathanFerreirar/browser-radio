@@ -1,5 +1,6 @@
 import './globals.css'
 
+import React from 'react'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
@@ -31,12 +32,14 @@ const RootLayout = ({
             'flex items-center justify-center min-h-screen min-w-screen bg-white',
           )}
         >
-          <RadiosProvider>
-            <FavoritesProvider>
-              <LeftSide />
-              {children}
-            </FavoritesProvider>
-          </RadiosProvider>
+          <React.Suspense>
+            <RadiosProvider>
+              <FavoritesProvider>
+                <LeftSide />
+                {children}
+              </FavoritesProvider>
+            </RadiosProvider>
+          </React.Suspense>
         </main>
       </body>
     </html>
