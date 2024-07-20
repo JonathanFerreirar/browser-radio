@@ -2,6 +2,7 @@
 
 import InfiniteScroll from 'react-infinite-scroll-component'
 
+import { ErrorBoundary } from '@/components/errorBoundary'
 import Station from '@/components/station/station'
 
 import { RadioSkeleton } from './radioSkeletons'
@@ -20,13 +21,17 @@ export const RadiosList = () => {
       className="space-y-5 px-3 py-5"
     >
       {radios.map((radio) => (
-        <Station
-          name={radio.name}
+        <ErrorBoundary
           key={`${radio.stationuuid}`}
-          isFavorite={radio.isFavorite}
-          onClick={() => addRadioToFavorite(radio)}
-          fallBack={`Station - ${radio.stationuuid}`}
-        />
+          errorMessage="Erro to render radio station"
+        >
+          <Station
+            name={radio.name}
+            isFavorite={radio.isFavorite}
+            onClick={() => addRadioToFavorite(radio)}
+            fallBack={`Station - ${radio.stationuuid}`}
+          />
+        </ErrorBoundary>
       ))}
     </InfiniteScroll>
   )

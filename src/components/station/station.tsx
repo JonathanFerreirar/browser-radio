@@ -25,7 +25,11 @@ const Station = ({ name, fallBack, isFavorite, ...props }: StationProps) => {
         <span className="max-w-[90%] truncate">{displayName}</span>
       </Button>
       {isFavorite && (
-        <Icons.check className="absolute bottom-1/2 right-3 translate-y-1/2 text-white" />
+        <Icons.favorite className="absolute bottom-1/2 right-3 translate-y-1/2 text-white" />
+      )}
+
+      {!isFavorite && (
+        <Icons.noFavorite className="absolute bottom-1/2 right-3 translate-y-1/2 text-white" />
       )}
     </div>
   )

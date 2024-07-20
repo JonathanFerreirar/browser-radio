@@ -2,9 +2,11 @@
 
 import React from 'react'
 import Image from 'next/image'
+import { toast } from 'sonner'
 
 import Logo from '@/../public/logo.png'
 import Search from '@/components/search/search'
+import { Sonners } from '@/components/sonners'
 import StationCardPlay from '@/components/stationCardPlay/stationCardPlay'
 import { useFavorites } from '@/context/favorites'
 import { IsplayingProvider } from '@/context/isPlaying'
@@ -21,10 +23,13 @@ const Home = () => {
   const removeRadioFromFavorite = (stationuuid: string) => {
     removeFavorite(stationuuid)
     updateRadio(stationuuid, { isFavorite: false })
+    return toast(<Sonners.unfavorited />, {
+      duration: 700,
+    })
   }
 
   return (
-    <div className="mx-auto h-screen w-full max-w-[1100px] px-20 py-10 max-sm:px-3">
+    <div className="mx-auto hidden h-screen w-full max-w-[1100px] px-20 py-10 max-sm:px-3 lg:block">
       <div className="flex items-center justify-center gap-5">
         <Image alt="Radio Browser" src={Logo} width={100} height={500} />
         <h1 className="text-3xl font-semibold">Radio Browser</h1>
@@ -42,7 +47,7 @@ const Home = () => {
         </div>
       </header>
 
-      <section className="mt-5 flex w-full flex-col gap-3 p-5">
+      <section className="mt-5 flex max-h-[60vh] w-full flex-col gap-3 overflow-y-auto p-5">
         <IsplayingProvider>
           {favorites.map((favorite) => {
             return (

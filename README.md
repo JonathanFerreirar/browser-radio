@@ -83,4 +83,9 @@
 
     - `commithash: [commit_hash]`
 
+  - **Add sonner toast feedback**
+    - Add Sonner when a user favorites a station and when they unfavorite a station. Change the favorite station icons to improve UX. Add the new ShadCN component  `sonner`.
+
+    - `commithash: [commit_hash]`
+
 

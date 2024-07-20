@@ -8,6 +8,7 @@ import LeftSide from '@/components/layout/leftSide'
 import { FavoritesProvider } from '@/context/favorites'
 import { RadiosProvider } from '@/context/radios'
 import { cn } from '@/lib/utils'
+import { Toaster } from '@/primitive/ui/sonner'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -27,20 +28,26 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body className={`${poppins.className} bg-white`}>
-        <main
-          className={cn(
-            'flex items-center justify-center min-h-screen min-w-screen bg-white',
-          )}
-        >
-          <React.Suspense>
-            <RadiosProvider>
-              <FavoritesProvider>
+        <React.Suspense>
+          <RadiosProvider>
+            <FavoritesProvider>
+              <main
+                className={cn(
+                  'flex items-center justify-center min-h-screen min-w-screen bg-white',
+                )}
+              >
                 <LeftSide />
                 {children}
-              </FavoritesProvider>
-            </RadiosProvider>
-          </React.Suspense>
-        </main>
+              </main>
+            </FavoritesProvider>
+          </RadiosProvider>
+        </React.Suspense>
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            unstyled: true,
+          }}
+        />
       </body>
     </html>
   )

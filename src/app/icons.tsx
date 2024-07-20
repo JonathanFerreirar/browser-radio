@@ -1,5 +1,6 @@
 import { IconBaseProps } from 'react-icons'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
+import { BsStar, BsStarFill } from 'react-icons/bs'
 import { FaCheck, FaPlay, FaSearch, FaStop, FaTrash } from 'react-icons/fa'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { RiPencilFill } from 'react-icons/ri'
@@ -12,6 +13,8 @@ export const Icons = {
   pencil: RiPencilFill,
   trash: FaTrash,
   search: FaSearch,
+  favorite: BsStarFill,
+  noFavorite: BsStar,
   play: FaPlay,
   stop: FaStop,
   loading: ({ ...props }: IconBaseProps) => {
