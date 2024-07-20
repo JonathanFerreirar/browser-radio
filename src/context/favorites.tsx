@@ -6,7 +6,7 @@ import { Radio } from '@/types/radios'
 
 export type Favorite = Pick<
   Radio,
-  'url' | 'country' | 'url_resolved' | 'name' | 'stationuuid' | 'tags'
+  'url' | 'country' | 'url_resolved' | 'name' | 'stationuuid' | 'tags' | 'hls'
 >
 
 export type FavoritesContextProps = {

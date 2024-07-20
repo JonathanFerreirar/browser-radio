@@ -8,11 +8,16 @@ import { useAudioPlayer } from './audioPlayer.hooks'
 export type AudioPlayerProps = {
   id: string
   src: string
+  isHls: boolean
   className?: string
 } & ButtonProps
 
-export const AudioPlayer = ({ id, src, ...rest }: AudioPlayerProps) => {
-  const { playingStationuuid, audioRef, togglePlay } = useAudioPlayer(src, id)
+export const AudioPlayer = ({ id, src, isHls, ...rest }: AudioPlayerProps) => {
+  const { playingStationuuid, audioRef, togglePlay } = useAudioPlayer({
+    id,
+    src,
+    isHls,
+  })
 
   return (
     <Button

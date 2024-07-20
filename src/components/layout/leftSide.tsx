@@ -1,7 +1,7 @@
 import { Icons } from '@/app/icons'
-import Search from '@/components/search/search'
 
 import { RadiosList } from './fragments/radiosList'
+import { RadiosSearch } from './fragments/radiosSearch'
 
 const LeftSide = async () => {
   return (
@@ -10,7 +10,7 @@ const LeftSide = async () => {
         <Icons.burgue size={30} className="text-secondary" />
       </div>
       <div className="px-3">
-        <Search placeholder="Search here" />
+        <RadiosSearch />
       </div>
       <RadiosList />
     </div>

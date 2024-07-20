@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Commit History
 
-## Getting Started
+### July 18
 
-First, run the development server:
+- **Create repository**
+  - Using a template with basic configs made by me.
+  - `commithash: 0626e6541ef1e649a2103bd1c956fe3bfb003597`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Basic configurations**
+  - Adjust logo, favicon, title, description, and CSS variables.
+  - `commithash: 91453c2b2b370e39d9e37a6060568d22bcce5705`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Add PWA support**
+  - Configure the project to support PWA.
+  - `commithash: 38f7c1a37b7fe996dc57de0ead96ed9faf61c310`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Add react-icons library**
+  - Prepare icons for use in the project.
+  - `commithash: 6a80d3b5d8ebae42e9c70c0df210b293edb0bd0c`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Create basic components**
+  - Start creating the left side layout and basic components like search and station.
+  - Add two ShadCN components: button and input.
+  - `commithash: 4ad84a32e7c252e434309b64e5b2ae4480ae18ca`
 
-## Learn More
+- **Create radio stations service and context**
+  - Create a service to get radio stations, set up the base API and add an `.env` file.
+  - Create radio list on the left side and create favorites context together with radios context to handle this throughout the application.
+  - Add new ShadCN component: skeleton.
+  - Create radio types.
+  - `commithash: d4ba266620708743e91dabf6a7254539326c6c7f`
 
-To learn more about Next.js, take a look at the following resources:
+- **Create AudioPlayer component**
+  - `commithash: f2d8f70426b156a9b1877058775e736db8c52209`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Create ErrorBoundary component**
+  - Improve AudioPlayer to handle errors.
+  - `commithash: 8edacd37943f7b2f24648f98a562fa3673b87492`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### July 19
 
-## Deploy on Vercel
+- **Create favorite station layout**
+  - Create component to render it.
+  - Adjust audio player to allow only one audio at a time.
+  - Create `editStation` component to edit a station's display name and tags.
+  - Create new context, `isPlaying`, used to allow only one audio with a play icon at a time.
+  - Add 3 new ShadCN components: form, label, and sheet.
+  - `commithash: 1e3c25b0c314f79fac995a6af101ab0fabd0629a`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Adjust code style**
+  - Fix build errors caused by ESLint in label, sheet, and skeleton components.
+  - `commithash: 5d67cc694af643ffc6e269fe30d92a38101ada38`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### July 20
+
+- **Improve HLS audio handling**
+  - Adjust `playAudio` to handle `m3u8` audio type better in production environment.
+  - Create `searchRadio` component and its functionality.
+  - Implement search that sets the search value in the URL.
+  - Add new package `useDebounce` to handle search values better.
+  - Adjust readme
+  - `commithash: [commit hash]`
+
+---

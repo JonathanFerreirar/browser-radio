@@ -18,13 +18,7 @@ const StationCardPlay = ({
   removeRadioFromFavorite,
   ...props
 }: StationCardPlayProps) => {
-  const {
-    name,
-    tags,
-    country,
-    stationuuid,
-    url_resolved: urlResolved,
-  } = favorite
+  const { name, tags, country, stationuuid, url } = favorite
 
   return (
     <div
@@ -35,7 +29,7 @@ const StationCardPlay = ({
       )}
     >
       <div className="flex items-start gap-4">
-        <AudioPlayer id={stationuuid} src={String(urlResolved)} />
+        <AudioPlayer id={stationuuid} isHls={!!favorite.hls} src={url} />
         <div className="flex flex-col items-start">
           <label aria-label="Name of station" htmlFor={stationuuid}>
             {name}

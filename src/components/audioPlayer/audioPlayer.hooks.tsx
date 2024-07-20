@@ -5,31 +5,48 @@ import Hls from 'hls.js'
 
 import { useIsPlaying } from '@/context/isPlaying'
 
-export const useAudioPlayer = (src: string, id: string) => {
+import { AudioPlayerProps } from './audioPlayer'
+
+type UseAudioPlayerProps = Pick<AudioPlayerProps, 'id' | 'src' | 'isHls'>
+
+export const useAudioPlayer = ({ id, isHls, src }: UseAudioPlayerProps) => {
   const { setPlayingStationuuid, playingStationuuid } = useIsPlaying()
 
   const audioRef = React.useRef<HTMLAudioElement>(null)
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_, setHlsInstance] = React.useState<Hls | null>(null)
+  const hlsRef = React.useRef<Hls | null>(null)
 
   React.useEffect(() => {
-    if (!audioRef.current) return
+    const audio = audioRef.current
 
-    const isM3U8 = isM3U8File(src)
+    if (!audio) return
 
-    if (isM3U8) {
-      const hls = new Hls()
-      setHlsInstance(hls)
+    if (isHls) {
+      if (Hls.isSupported()) {
+        const hls = new Hls()
+        hlsRef.current = hls
+        hls.loadSource(src)
+        hls.attachMedia(audio)
 
-      hls.loadSource(src)
-      hls.attachMedia(audioRef.current)
+        hls.on(Hls.Events.MEDIA_ATTACHED, () => {
+          console.log('HLS Media Attached')
+        })
 
-      return () => {
-        hls.destroy()
+        hls.on(Hls.Events.ERROR, (event, data) => {
+          console.error('HLS Error:', event, data)
+        })
+
+        return () => {
+          hls.destroy()
+          hlsRef.current = null
+        }
+      } else if (audio.canPlayType('application/vnd.apple.mpegurl')) {
+        audio.src = src
       }
+    } else {
+      audio.src = src
     }
-  }, [src])
+  }, [src, isHls])
 
   const togglePlay = () => {
     const audios = document.querySelectorAll(
@@ -45,20 +62,12 @@ export const useAudioPlayer = (src: string, id: string) => {
 
     if (playingStationuuid === id) {
       audioRef.current.pause()
+      setPlayingStationuuid('')
       audioRef.current.autoplay = false
     } else {
       audioRef.current.play()
+      setPlayingStationuuid(id)
       audioRef.current.autoplay = true
-    }
-
-    setPlayingStationuuid(id)
-  }
-
-  const isM3U8File = (url: string) => {
-    if (url.endsWith('.m3u8')) {
-      return true
-    } else {
-      return false
     }
   }
 
