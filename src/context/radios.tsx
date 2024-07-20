@@ -7,7 +7,9 @@ import { Radio, Radios } from '@/types/radios'
 
 type RadiosContextProps = {
   radios: Radios
+  searchList: Radios
   isLoading: boolean
+  setSearchList: React.Dispatch<React.SetStateAction<Radios>>
   updateRadio: (url: string, updatedRadio: Partial<Radio>) => void
 }
 
@@ -16,6 +18,7 @@ const RadiosContext = React.createContext({} as RadiosContextProps)
 export const RadiosProvider = ({ children }: React.PropsWithChildren) => {
   const [radios, setRadios] = React.useState<Radios>([])
   const [isLoading, setIsloading] = React.useState(false)
+  const [searchList, setSearchList] = React.useState<Radios>([])
 
   React.useEffect(() => {
     setIsloading(true)
@@ -41,9 +44,11 @@ export const RadiosProvider = ({ children }: React.PropsWithChildren) => {
   return (
     <RadiosContext.Provider
       value={{
-        radios,
         isLoading,
+        searchList,
         updateRadio,
+        setSearchList,
+        radios: searchList.length > 1 ? searchList : radios,
       }}
     >
       {children}

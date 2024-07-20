@@ -13,15 +13,7 @@ export const getRadios = async (): Promise<Radios> => {
   return jsonData
 }
 
-type GetRadiosByNameProps = {
-  name: string
-  country: string
-  language: string
-}
-
-export const getRadiosByName = async ({
-  name,
-}: GetRadiosByNameProps): Promise<Radios> => {
+export const getRadiosByName = async (name: string): Promise<Radios> => {
   const data = await apiFetch(`/search?limit=10&country=Brazil&name=${name}`, {
     method: 'GET',
   })

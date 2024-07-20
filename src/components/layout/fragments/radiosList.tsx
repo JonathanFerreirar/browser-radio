@@ -30,7 +30,7 @@ export const RadiosList = () => {
   }
 
   return (
-    <div className="max-h-[80vh] space-y-5 overflow-y-auto px-3 py-5">
+    <div className="max-h-[80vh] max-w-[350px] space-y-5 overflow-y-auto px-3 py-5">
       {radios.map((radio) => (
         <Station
           name={radio.name}
