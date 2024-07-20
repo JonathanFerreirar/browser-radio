@@ -66,16 +66,21 @@
     - `commithash: 81de25965dcd0eeb8ff3adf1943b577d201a426d`
 
   - **Improving Search radio function**
-  - Adjust eslint rule to permite use '_' as unused variable
-  - Adjust params on getRadioByName action
-  - Fix layout shift on leftSide
-  - Fix layout shift on radiosList
-  - Create useRadioSearch hook to handle search on search component
-  - Create new state to handle result of the search values
-  - `commithash: 946c4f713cec1ae4080f2b4f505a0a255d38d3f0`
+    - Adjust eslint rule to permite use '_' as unused variable
+    - Adjust params on getRadioByName action
+    - Fix layout shift on leftSide
+    - Fix layout shift on radiosList
+    - Create useRadioSearch hook to handle search on search component
+    - Create new state to handle result of the search values
+    - `commithash: 946c4f713cec1ae4080f2b4f505a0a255d38d3f0`
 
-   - **Improving useRadioSearch hook**
-  - Adjust useRadioSearch by creating a new hook to split the responsibility and make the code more reusable
-  - `commithash: 1ab518358a873041b88079bddc4cdb091de9bb08`
+  - **Improving useRadioSearch hook**
+    - Adjust useRadioSearch by creating a new hook to split the responsibility and make the code more reusable
+    - `commithash: 1ab518358a873041b88079bddc4cdb091de9bb08`
 
----
+  - **Add pagination**
+    - Add pagination to the `radiosList` component, improving the code by adding a custom hook to handle the logic of the radiosList component. Create a function to handle pagination in the context called `addRadioByOffset`, adjust the radio action to accept pagination, and add a new library called `react-infinite-scroll-component`.
+
+    - `commithash: [commit_hash]`
+
+

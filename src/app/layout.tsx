@@ -26,7 +26,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={`${poppins.className} bg-white`}>
         <main
           className={cn(
             'flex items-center justify-center min-h-screen min-w-screen bg-white',
