@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { getRadios } from '@/actions/getRadios'
+import { getRadios } from '@/actions/radios.action'
 import { Radio, Radios } from '@/types/radios'
 
 type RadiosContextProps = {

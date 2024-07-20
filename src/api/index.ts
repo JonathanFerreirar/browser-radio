@@ -6,6 +6,7 @@ export const apiFetch = async (path: string, options: RequestInit) => {
     headers: {
       ...options.headers,
       'Content-Type': 'application/json',
+      'appname/appversion': 'Challenge App/1.0',
     },
   })
 
