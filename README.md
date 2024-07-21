@@ -1,3 +1,49 @@
+# Browser Radio
+
+> This project is a radio browser where you can select favorite radio stations to listen to
+
+Project Link: `https://github.com/JonathanFerreirar/coodesh-challenge`
+
+Technolgies: `Nextjs, React, next-pwa, TypeScript, Shadcn, Tailwind, Jest, react-icons,`
+              `react-error-boundary, react-hook-form, react-infinite-scroll-component, use-debounce, zod`
+
+## 💻 Pre-requisites
+
+Before you begin, make sure you have met the following requirements:
+
+- You have installed the latest version of `<nodejs / npm /  pnpm>`.
+- You have a `<Windows / Linux / Mac>` machine.
+
+
+## 🚀 Running project:
+
+#### Use `pnpm` to run this project with security.
+
+```npm install pnpm```
+
+```git clone https://github.com/JonathanFerreirar/coodesh-challenge.git .```
+```if you ara using ssh: git clone  `git@github.com:JonathanFerreirar/coodesh-challenge.git` .```
+```pnpm i```
+```create a file caled `.env` end put this ballow line insided it```
+```NEXT_PUBLIC_API=https://de1.api.radio-browser.info/json/stations```
+```pnpm run dev```
+
+## 🤝 created by
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="#" title="defina o titulo do link">
+        <img src="https://avatars.githubusercontent.com/u/107007377?v=4" width="100px;" alt="Foto do Jonathan Rodrigo"/><br>
+        <sub>
+          <b>Jonathan Rodrigo</b>
+        </sub>
+      </a>
+    </td>
+</table>
+
+>  This is a challenge by [Coodesh](https://coodesh.com/)
+
 ## Commit History
 
 ### July 18
