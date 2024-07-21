@@ -4,8 +4,7 @@
 
 Project Link: `https://github.com/JonathanFerreirar/coodesh-challenge`
 
-Technolgies: `Nextjs, React, next-pwa, TypeScript, Shadcn, Tailwind, Jest, react-icons,`
-              `react-error-boundary, react-hook-form, react-infinite-scroll-component, use-debounce, zod`
+Technolgies: ```Nextjs, React, next-pwa, TypeScript, Shadcn, Tailwind, Jest, react-icons, react-error-boundary, react-hook-form, react-infinite-scroll-component, use-debounce, zod```
 
 ## 💻 Pre-requisites
 
