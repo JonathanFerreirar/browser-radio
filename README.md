@@ -101,13 +101,13 @@
     - Implement logic to persiste data on localStorage.
     - Add two new function on utils, to handle with localstorage.
     - Add a skeleton for favorite radios while checking their state in local storage.
-    - `commithash: [commit_hash]`
+    - `commithash: 5296b9a08a0a5b62654bd88b5cac9758ab71b436`
 
   - **Add tests on component**
     - create `test for station` component.
     - create `test for stationCardPlay` component.
     - Migrate the `page.tsx` file to serve component and create a file called `favorites` to contain all the necessary logic to render favorites.
-    - `commithash: [commit_hash]`
+    - `commithash: 21f62e3b04bd1210ce25175607bdddcff236c510`
 
 
 
