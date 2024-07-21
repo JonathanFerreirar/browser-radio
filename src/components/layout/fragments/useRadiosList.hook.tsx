@@ -13,7 +13,13 @@ export const useRadiosList = () => {
 
   const [page, setPage] = React.useState(15)
 
-  const { radios, updateRadio, addRadioByOffset } = useRadios()
+  const {
+    radios,
+    updateRadio,
+    searchList,
+    updateSearchRadio,
+    addRadioByOffset,
+  } = useRadios()
 
   const handlePagination = async () => {
     await addRadioByOffset(page)
@@ -31,7 +37,10 @@ export const useRadiosList = () => {
     }
 
     addFavorite(radio)
-    updateRadio(radio.stationuuid, { isFavorite: true })
+
+    searchList.length > 0
+      ? updateSearchRadio(radio.stationuuid, { isFavorite: true })
+      : updateRadio(radio.stationuuid, { isFavorite: true })
 
     toast(<Sonners.favorited />, {
       duration: 700,

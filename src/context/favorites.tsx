@@ -25,6 +25,14 @@ export const FavoritesProvider = ({ children }: React.PropsWithChildren) => {
   const [favorites, setFavorires] = React.useState([] as Favorite[])
 
   const addFavorite = (favorite: Favorite) => {
+    const alreadyHas = favorites.some(
+      (favor) => favor.stationuuid === favorite.stationuuid,
+    )
+
+    if (alreadyHas) {
+      return
+    }
+
     setFavorires([...favorites, favorite])
   }
   const removeFavorite = (stationuuid: string) => {

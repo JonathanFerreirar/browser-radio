@@ -12,6 +12,7 @@ type RadiosContextProps = {
   addRadioByOffset: (offset: number) => Promise<void>
   setSearchList: React.Dispatch<React.SetStateAction<Radios>>
   updateRadio: (url: string, updatedRadio: Partial<Radio>) => void
+  updateSearchRadio: (url: string, updatedRadio: Partial<Radio>) => void
 }
 
 const RadiosContext = React.createContext({} as RadiosContextProps)
@@ -48,6 +49,20 @@ export const RadiosProvider = ({ children }: React.PropsWithChildren) => {
       ) as Radios,
     )
   }
+
+  const updateSearchRadio = (
+    stationuuid: string,
+    updatedRadio: Partial<Radio>,
+  ) => {
+    setSearchList(
+      searchList.map((radio) =>
+        radio.stationuuid === stationuuid
+          ? { ...radio, ...updatedRadio }
+          : radio,
+      ) as Radios,
+    )
+  }
+
   return (
     <RadiosContext.Provider
       value={{
@@ -56,6 +71,7 @@ export const RadiosProvider = ({ children }: React.PropsWithChildren) => {
         updateRadio,
         setSearchList,
         addRadioByOffset,
+        updateSearchRadio,
         radios: searchList.length > 1 ? searchList : radios,
       }}
     >

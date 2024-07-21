@@ -81,17 +81,17 @@
   - **Add pagination**
     - Add pagination to the `radiosList` component, improving the code by adding a custom hook to handle the logic of the radiosList component. Create a function to handle pagination in the context called `addRadioByOffset`, adjust the radio action to accept pagination, and add a new library called `react-infinite-scroll-component`.
 
-    - `commithash: [commit_hash]`
+    - `commithash: 39f1ad59cb19212e4283807a7d7ec909cdf4579a`
 
   - **Add sonner toast feedback**
     - Add Sonner when a user favorites a station and when they unfavorite a station. Change the favorite station icons to improve UX. Add the new ShadCN component  `sonner`.
 
-    - `commithash: [commit_hash]`
+    - `commithash: 75c0cbe77730dddecb44a14071ea902b9351bcc6`
 
      - **Adjust mobile site version**
     - create `RadiosListSheet` component to be able, add a radio on mobile, adjust page to render mobile with correctly, add two new icons `arrowLeft`and `arrowRight`, to use on sheet trigger.
 
-    - `commithash: [commit_hash]`
+    - `commithash: 30b5042dd16dba086eb108b9cd29cecf5459c416`
 
 
 

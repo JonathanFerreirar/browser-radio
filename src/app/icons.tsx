@@ -11,11 +11,13 @@ import {
   FaTrash,
 } from 'react-icons/fa'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { MdOutlineError } from 'react-icons/md'
 import { RiPencilFill } from 'react-icons/ri'
 
 import { cn } from '@/lib/utils'
 
 export const Icons = {
+  warning: MdOutlineError,
   burgue: GiHamburgerMenu,
   arrowLeft: FaLongArrowAltLeft,
   arrowRight: FaLongArrowAltRight,
