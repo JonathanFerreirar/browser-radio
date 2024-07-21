@@ -35,16 +35,20 @@ export const RadiosProvider = ({ children }: React.PropsWithChildren) => {
       const LocalStoragefavorites = JSON.parse(
         String(itemsOnStorage),
       ) as Favorite[]
+      if (LocalStoragefavorites) {
+        const radiosWithCorrectlyFavorites = radiosResult.map((radio) => {
+          const isFavorite = LocalStoragefavorites.some(
+            (favorite) => favorite.stationuuid === radio.stationuuid,
+          )
 
-      const radiosWithCorrectlyFavorites = radiosResult.map((radio) => {
-        const isFavorite = LocalStoragefavorites.some(
-          (favorite) => favorite.stationuuid === radio.stationuuid,
-        )
+          return { ...radio, isFavorite }
+        }) as Radios
 
-        return { ...radio, isFavorite }
-      }) as Radios
+        setRadios(radiosWithCorrectlyFavorites)
+      } else {
+        setRadios(radiosResult)
+      }
 
-      setRadios(radiosWithCorrectlyFavorites)
       setIsloading(false)
     }
     fetchRadios()

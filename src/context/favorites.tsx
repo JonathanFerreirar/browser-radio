@@ -32,7 +32,10 @@ export const FavoritesProvider = ({ children }: React.PropsWithChildren) => {
 
     const LocalStoragefavorites = JSON.parse(String(itemsOnStorage))
 
-    setFavorires(LocalStoragefavorites)
+    if (LocalStoragefavorites) {
+      setFavorires(LocalStoragefavorites)
+    }
+
     setIsLoading(false)
   }, [])
 

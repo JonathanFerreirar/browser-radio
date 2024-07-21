@@ -14,24 +14,46 @@ Before you begin, make sure you have met the following requirements:
 - You have a `<Windows / Linux / Mac>` machine.
 
 
-## 🚀 Running project:
+## 🚀 Running the Project:
 
-#### Use `pnpm` to run this project with security.
+#### Use `pnpm` to securely run this project.
 
-```npm install pnpm```
+1. Install `pnpm`:
 
+    ```sh
+    npm install -g pnpm
+    ```
 
-```git clone https://github.com/JonathanFerreirar/coodesh-challenge.git .```
+2. Clone the repository:
 
-```if you ara using ssh: git clone  `git@github.com:JonathanFerreirar/coodesh-challenge.git` .```
+    ```sh
+    git clone https://github.com/JonathanFerreirar/coodesh-challenge.git .
+    ```
 
-```pnpm i```
+    If you are using SSH:
 
-```create a file caled `.env` end put this ballow line insided it```
+    ```sh
+    git clone git@github.com:JonathanFerreirar/coodesh-challenge.git .
+    ```
 
-```NEXT_PUBLIC_API=https://de1.api.radio-browser.info/json/stations```
+3. Install dependencies:
 
-```pnpm run dev```
+    ```sh
+    pnpm install
+    ```
+
+4. Create a file called `.env` and add the following line to it:
+
+    ```sh
+    NEXT_PUBLIC_API=https://de1.api.radio-browser.info/json/stations
+    ```
+
+5. Start the development server:
+
+    ```sh
+    pnpm run dev
+    ```
+
 
 ## 🤝 created by
 
@@ -163,6 +185,10 @@ Before you begin, make sure you have met the following requirements:
    - **Add tests on audioPlayer and search**
     - create `test for audioPlayer` component.
     - create `test for search` component.
+    - `commithash: [commit_hash]`
+
+    - **Fix bug**
+    - fix bug caused by localstorage lógic.
     - `commithash: [commit_hash]`
 
 
