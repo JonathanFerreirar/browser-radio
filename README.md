@@ -88,20 +88,26 @@
 
     - `commithash: 75c0cbe77730dddecb44a14071ea902b9351bcc6`
 
-     - **Adjust mobile site version**
+  - **Adjust mobile site version**
     - create `RadiosListSheet` component to be able, add a radio on mobile, adjust page to render mobile with correctly, add two new icons `arrowLeft`and `arrowRight`, to use on sheet trigger.
 
     - `commithash: 30b5042dd16dba086eb108b9cd29cecf5459c416`
 
-    ### July 21
+### July 21
 
-- **Add data persiste on localstorage**
-  - Adjust folders organization.
-  - Create `skeletongWrapper` component.
-  - Implement logic to persiste data on localStorage.
-  - Add two new function on utils, to handle with localstorage.
-  - Add a skeleton for favorite radios while checking their state in local storage.
-  - `commithash: [commit_hash]`
+  - **Add data persiste on localstorage**
+    - Adjust folders organization.
+    - Create `skeletongWrapper` component.
+    - Implement logic to persiste data on localStorage.
+    - Add two new function on utils, to handle with localstorage.
+    - Add a skeleton for favorite radios while checking their state in local storage.
+    - `commithash: [commit_hash]`
+
+  - **Add tests on component**
+    - create `test for station` component.
+    - create `test for stationCardPlay` component.
+    - Migrate the `page.tsx` file to serve component and create a file called `favorites` to contain all the necessary logic to render favorites.
+    - `commithash: [commit_hash]`
 
 
 

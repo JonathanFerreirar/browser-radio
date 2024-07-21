@@ -14,7 +14,7 @@ const Station = ({ name, fallBack, isFavorite, ...props }: StationProps) => {
   const displayName = name?.trim() === '' ? fallBack : name
 
   return (
-    <div className="relative h-auto">
+    <div className="relative h-auto" data-testid="test_station">
       <Button
         {...props}
         className={cn(
@@ -22,14 +22,22 @@ const Station = ({ name, fallBack, isFavorite, ...props }: StationProps) => {
           props.className,
         )}
       >
-        <span className="max-w-[90%] truncate">{displayName}</span>
+        <span data-testid="test_station_name" className="max-w-[90%] truncate">
+          {displayName}
+        </span>
       </Button>
       {isFavorite && (
-        <Icons.favorite className="absolute bottom-1/2 right-3 translate-y-1/2 text-white" />
+        <Icons.favorite
+          data-testid="test_is_favorites"
+          className="absolute bottom-1/2 right-3 translate-y-1/2 text-white"
+        />
       )}
 
       {!isFavorite && (
-        <Icons.noFavorite className="absolute bottom-1/2 right-3 translate-y-1/2 text-white" />
+        <Icons.noFavorite
+          data-testid="test_is_not_favorites"
+          className="absolute bottom-1/2 right-3 translate-y-1/2 text-white"
+        />
       )}
     </div>
   )

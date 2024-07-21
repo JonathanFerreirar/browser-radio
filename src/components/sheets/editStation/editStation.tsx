@@ -25,7 +25,7 @@ export const EditStationSheet = ({
   return (
     <Sheet>
       <SheetTrigger asChild>{children}</SheetTrigger>
-      <SheetContent className="bg-white">
+      <SheetContent className="bg-white" data-testid="test_edit_station_sheet">
         <SheetHeader>
           <SheetTitle>Edit Station</SheetTitle>
           <SheetDescription>
