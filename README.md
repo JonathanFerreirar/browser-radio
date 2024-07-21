@@ -93,5 +93,15 @@
 
     - `commithash: 30b5042dd16dba086eb108b9cd29cecf5459c416`
 
+    ### July 21
+
+- **Add data persiste on localstorage**
+  - Adjust folders organization.
+  - Create `skeletongWrapper` component.
+  - Implement logic to persiste data on localStorage.
+  - Add two new function on utils, to handle with localstorage.
+  - Add a skeleton for favorite radios while checking their state in local storage.
+  - `commithash: [commit_hash]`
+
 
 

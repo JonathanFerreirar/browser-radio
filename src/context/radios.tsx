@@ -3,7 +3,10 @@
 import React from 'react'
 
 import { getRadios } from '@/actions/radios.action'
+import { getStorage } from '@/lib/utils'
 import { Radio, Radios } from '@/types/radios'
+
+import { Favorite } from './favorites'
 
 type RadiosContextProps = {
   radios: Radios
@@ -28,7 +31,20 @@ export const RadiosProvider = ({ children }: React.PropsWithChildren) => {
     const fetchRadios = async () => {
       const radiosResult = await getRadios()
 
-      setRadios(radiosResult)
+      const itemsOnStorage = getStorage('favorite')
+      const LocalStoragefavorites = JSON.parse(
+        String(itemsOnStorage),
+      ) as Favorite[]
+
+      const radiosWithCorrectlyFavorites = radiosResult.map((radio) => {
+        const isFavorite = LocalStoragefavorites.some(
+          (favorite) => favorite.stationuuid === radio.stationuuid,
+        )
+
+        return { ...radio, isFavorite }
+      }) as Radios
+
+      setRadios(radiosWithCorrectlyFavorites)
       setIsloading(false)
     }
     fetchRadios()

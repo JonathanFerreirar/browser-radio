@@ -1,11 +1,9 @@
-'use client'
-
 import React from 'react'
 
 import { Icons } from '@/app/icons'
 import { ErrorBoundary } from '@/components/errorBoundary'
-import { RadiosList } from '@/components/layout/fragments/radiosList'
-import { RadiosSearch } from '@/components/layout/fragments/radiosSearch/radiosSearch'
+import { RadiosList } from '@/components/radios/radiosList'
+import { RadiosSearch } from '@/components/radios/radiosSearch/radiosSearch'
 import {
   Sheet,
   SheetClose,

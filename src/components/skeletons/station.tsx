@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Skeleton } from '@/primitive/ui/skeleton'
 
-export const RadioSkeleton = () => {
+export const StationSkeleton = () => {
   return (
     <div className="max-h-[80vh] space-y-5">
       {Array.from({ length: 15 }).map((_, index) => (

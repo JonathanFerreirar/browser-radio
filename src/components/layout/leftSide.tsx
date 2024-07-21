@@ -1,9 +1,8 @@
 import { Icons } from '@/app/icons'
 
 import { ErrorBoundary } from '../errorBoundary'
-
-import { RadiosList } from './fragments/radiosList'
-import { RadiosSearch } from './fragments/radiosSearch/radiosSearch'
+import { RadiosList } from '../radios/radiosList'
+import { RadiosSearch } from '../radios/radiosSearch/radiosSearch'
 
 const LeftSide = async () => {
   return (

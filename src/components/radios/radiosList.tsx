@@ -5,7 +5,8 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 import { ErrorBoundary } from '@/components/errorBoundary'
 import Station from '@/components/station/station'
 
-import { RadioSkeleton } from './radioSkeletons'
+import { StationSkeleton } from '../skeletons/station'
+
 import { useRadiosList } from './useRadiosList.hook'
 
 export const RadiosList = () => {
@@ -16,7 +17,7 @@ export const RadiosList = () => {
       height="80vh"
       hasMore={true}
       next={handlePagination}
-      loader={<RadioSkeleton />}
+      loader={<StationSkeleton />}
       dataLength={radios.length}
       className="space-y-5 px-3 py-5"
     >

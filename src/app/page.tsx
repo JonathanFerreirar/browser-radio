@@ -7,6 +7,7 @@ import { toast } from 'sonner'
 import Logo from '@/../public/logo.png'
 import Search from '@/components/search/search'
 import { RadiosListSheet } from '@/components/sheets/radiosList'
+import { StationCardPlaySkeleton } from '@/components/skeletons/stationCardPlay'
 import { Sonners } from '@/components/sonners'
 import StationCardPlay from '@/components/stationCardPlay/stationCardPlay'
 import { useFavorites } from '@/context/favorites'
@@ -22,7 +23,7 @@ type Home = {
 
 const Home = () => {
   const { updateRadio } = useRadios()
-  const { favorites, removeFavorite } = useFavorites()
+  const { favorites, removeFavorite, isLoading } = useFavorites()
 
   const removeRadioFromFavorite = (stationuuid: string) => {
     removeFavorite(stationuuid)
@@ -73,33 +74,36 @@ const Home = () => {
       </header>
 
       <section className="mt-5 flex max-h-[60vh] w-full flex-col gap-3 overflow-y-auto px-2 py-5 lg:p-5">
-        {favorites.length === 0 ? (
-          <React.Fragment>
-            <p className="text-center text-sm lg:hidden ">
-              Click on{' '}
-              <span className="text-base font-semibold">See all Radios</span> to
-              add a radio on your favorites
-            </p>
+        {isLoading && <StationCardPlaySkeleton />}
 
-            <p className="hidden text-center text-base lg:block">
-              Click in a{' '}
-              <span className="text-xl font-semibold">Radio station</span> to
-              add a radio on your favorites
-            </p>
-          </React.Fragment>
-        ) : (
-          <IsplayingProvider>
-            {favorites.map((favorite) => {
-              return (
-                <StationCardPlay
-                  favorite={favorite}
-                  key={favorite.stationuuid}
-                  removeRadioFromFavorite={removeRadioFromFavorite}
-                />
-              )
-            })}
-          </IsplayingProvider>
-        )}
+        {!isLoading &&
+          (favorites.length === 0 ? (
+            <React.Fragment>
+              <p className="text-center text-sm lg:hidden ">
+                Click on{' '}
+                <span className="text-base font-semibold">See all Radios</span>{' '}
+                to add a radio on your favorites
+              </p>
+
+              <p className="hidden text-center text-base lg:block">
+                Click in a{' '}
+                <span className="text-xl font-semibold">Radio station</span> to
+                add a radio on your favorites
+              </p>
+            </React.Fragment>
+          ) : (
+            <IsplayingProvider>
+              {favorites.map((favorite) => {
+                return (
+                  <StationCardPlay
+                    favorite={favorite}
+                    key={favorite.stationuuid}
+                    removeRadioFromFavorite={removeRadioFromFavorite}
+                  />
+                )
+              })}
+            </IsplayingProvider>
+          ))}
       </section>
     </div>
   )
