@@ -8,8 +8,9 @@ const Search = ({ ...props }: SearchProps) => {
   return (
     <Input
       {...props}
-      placeholder={props.placeholder}
       className={props.className}
+      placeholder={props.placeholder}
+      data-testid="test_search_component"
     />
   )
 }

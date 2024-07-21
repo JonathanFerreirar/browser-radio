@@ -109,5 +109,10 @@
     - Migrate the `page.tsx` file to serve component and create a file called `favorites` to contain all the necessary logic to render favorites.
     - `commithash: 21f62e3b04bd1210ce25175607bdddcff236c510`
 
+   - **Add tests on audioPlayer and search**
+    - create `test for audioPlayer` component.
+    - create `test for search` component.
+    - `commithash: [commit_hash]`
+
 
 

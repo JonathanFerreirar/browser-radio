@@ -30,12 +30,7 @@ export const StationCardPlay = ({
       data-testid="test_StationCardPlay"
     >
       <div className="flex items-start gap-4">
-        <AudioPlayer
-          src={url}
-          id={stationuuid}
-          isHls={!!favorite.hls}
-          data-testid="test_StationCardPlay_audioPayer"
-        />
+        <AudioPlayer src={url} id={stationuuid} isHls={!!favorite.hls} />
         <div className="flex flex-col items-start">
           <label
             data-testid="test_StationCardPlay_name"

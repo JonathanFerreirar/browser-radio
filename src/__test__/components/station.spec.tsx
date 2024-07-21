@@ -7,7 +7,7 @@ const MOCK_DATA = {
   fallBack: 'Jonathan rodrigo',
 }
 
-describe(' Component', () => {
+describe('Station Component', () => {
   it('should be able to render component correctly', () => {
     render(<Station name={MOCK_DATA.name} fallBack={MOCK_DATA.fallBack} />)
 

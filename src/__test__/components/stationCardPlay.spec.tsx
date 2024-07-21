@@ -14,7 +14,7 @@ const MOCK_FAVORTIES: Favorite = {
 }
 const MOCK_REMOVE_RADION_FUNCTION = jest.fn()
 
-describe(' Component', () => {
+describe('StationCardPlay Component', () => {
   it('should be able to render component correctly', () => {
     render(
       <StationCardPlay
@@ -53,7 +53,7 @@ describe(' Component', () => {
       />,
     )
 
-    const audioPlayer = screen.getByTestId('test_StationCardPlay_audioPayer')
+    const audioPlayer = screen.getByTestId('test_audioPlayer')
 
     expect(audioPlayer).toBeInTheDocument()
   })

@@ -25,6 +25,7 @@ export const AudioPlayer = ({ id, src, isHls, ...rest }: AudioPlayerProps) => {
       type="button"
       variant="default"
       onClick={togglePlay}
+      data-testid="test_audioPlayer"
       aria-label="Play or pause audio"
       className="size-12 rounded-full"
     >
@@ -32,13 +33,13 @@ export const AudioPlayer = ({ id, src, isHls, ...rest }: AudioPlayerProps) => {
         <Icons.stop
           size={30}
           className="text-secondary"
-          data-testid="test_audio_player_button_pause"
+          data-testid="test_audioPlayer_button_pause"
         />
       ) : (
         <Icons.play
           size={30}
           className="text-secondary"
-          data-testid="test_audio_player_button_play"
+          data-testid="test_audioPlayer_button_play"
         />
       )}
       <audio
