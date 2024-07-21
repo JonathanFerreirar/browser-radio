@@ -21,11 +21,17 @@ Before you begin, make sure you have met the following requirements:
 
 ```npm install pnpm```
 
+
 ```git clone https://github.com/JonathanFerreirar/coodesh-challenge.git .```
+
 ```if you ara using ssh: git clone  `git@github.com:JonathanFerreirar/coodesh-challenge.git` .```
+
 ```pnpm i```
+
 ```create a file caled `.env` end put this ballow line insided it```
+
 ```NEXT_PUBLIC_API=https://de1.api.radio-browser.info/json/stations```
+
 ```pnpm run dev```
 
 ## 🤝 created by
