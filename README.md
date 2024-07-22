@@ -54,6 +54,39 @@ Before you begin, make sure you have met the following requirements:
     pnpm run dev
     ```
 
+## Project structure
+
+```
+src/
+|-- action/ (Contains modules for handling HTTP requests)
+| |-- radios.action (Module for actions related to fetching all radios and filtered radios)
+|-- api/ (Custom fetch API used throughout the application)
+| |-- index.ts (Custom fetch API implementation)
+|-- app/ (Basic files and initial view pages)
+| |-- global.css
+| |-- icon.png
+| |-- icons.tsx (Icons used in the application)
+| |-- layout.tsx (View responsible for rendering the left-side component)
+| |-- manifest.json (Configuration file for PWA icons)
+| |-- page.tsx (Used to display the application screens)
+|-- components/ (UI components)
+| |-- audioPlayer/
+| | |-- audioPlayer.hook.tsx (Logic for the audio player)
+| | |-- index.tsx
+| | |-- audioPlayer.tsx (View for the audio player)
+| |-- layout/ (Components used in page.tsx and layout.tsx to render the screen)
+|-- context/ (Data management)
+| |-- radios.tsx (Context for managing radios data)
+|-- hooks/ (Custom hooks)
+| |-- useAddQueryOnUrl.ts (Handles adding parameters to the URL)
+|-- lib/
+| |-- utils/ (Utility functions used throughout the codebase)
+|-- primitive/ (Basic UI components used to create new components)
+| |-- ui/
+| | |-- button.tsx
+|-- types/ (Types used in the application)
+| |-- radios.ts (Type definitions for radios)
+```
 
 ## 🤝 created by
 
@@ -189,6 +222,11 @@ Before you begin, make sure you have met the following requirements:
 
     - **Fix bug**
     - fix bug caused by localstorage lógic.
+    - `commithash: [commit_hash]`
+
+    - **Add dockerfile**
+    - fix bug on editStation form.
+    - add Dockerfile.
     - `commithash: [commit_hash]`
 
 

@@ -20,9 +20,8 @@ const formSchema = z.object({
   stationName: z.string().min(2, {
     message: 'Statio name must be at least 2 characters.',
   }),
-  tags: z.string().min(2, {
-    message: 'Tags name must be at least 2 characters.',
-  }),
+
+  tags: z.string().optional(),
 })
 
 type FormSchemaType = z.infer<typeof formSchema>
@@ -54,7 +53,11 @@ export const EditStationForm = ({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-8"
+        autoFocus={false}
+      >
         <FormField
           name="stationName"
           control={form.control}
