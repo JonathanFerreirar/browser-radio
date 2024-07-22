@@ -245,16 +245,23 @@ src/
    - **Add tests on audioPlayer and search**
     - create `test for audioPlayer` component.
     - create `test for search` component.
-    - `commithash: [commit_hash]`
+    - `commithash: aec68efa6b3d3855f501b84cc87b99c7d16a3316`
 
     - **Fix bug**
     - fix bug caused by localstorage lógic.
-    - `commithash: [commit_hash]`
+    - `commithash: 65b2fcb7a324a3cc313561f4d259c37b3e47fe1d`
 
-    - **Add dockerfile**
+### July 22
+
+  - **Add dockerfile**
     - fix bug on editStation form.
     - add Dockerfile.
-    - `commithash: [commit_hash]`
+    - `commithash: 0311f2aea47e281a751cda5cecf45cf60019ebd4`
+  
+  - **Add docker instruction on readme**
+    - fix behavior on sheetEditStation form.
+    - add docker instruction on readme.
+    - `commithash: 0311f2aea47e281a751cda5cecf45cf60019ebd4`
 
 
 
