@@ -25,7 +25,12 @@ export const EditStationSheet = ({
   return (
     <Sheet>
       <SheetTrigger asChild>{children}</SheetTrigger>
-      <SheetContent className="bg-white" data-testid="test_edit_station_sheet">
+      <SheetContent
+        className="bg-white max-sm:w-[90vw]"
+        data-testid="test_edit_station_sheet"
+        onOpenAutoFocus={(event) => event.preventDefault()}
+        onCloseAutoFocus={(event) => event.preventDefault()}
+      >
         <SheetHeader>
           <SheetTitle>Edit Station</SheetTitle>
           <SheetDescription>

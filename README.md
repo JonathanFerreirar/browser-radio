@@ -2,9 +2,15 @@
 
 > This project is a radio browser where you can select favorite radio stations to listen to
 
-Project Link: `https://github.com/JonathanFerreirar/coodesh-challenge`
+Deploy url: 
+   ```sh
+   https://browser-radio.vercel.app/
+   ```
+Project Link: 
+> https://github.com/JonathanFerreirar/coodesh-challenge
 
-Technolgies: ```Nextjs, React, next-pwa, TypeScript, Shadcn, Tailwind, Jest, react-icons, react-error-boundary, react-hook-form, react-infinite-scroll-component, use-debounce, zod```
+Technolgies: 
+> Nextjs, React, Docker ,next-pwa, TypeScript, Shadcn, Tailwind, Jest, react-icons, react-error-boundary, react-hook-form, react-infinite-scroll-component, use-debounce, zod
 
 ## 💻 Pre-requisites
 
@@ -53,6 +59,27 @@ Before you begin, make sure you have met the following requirements:
     ```sh
     pnpm run dev
     ```
+
+
+## 🚀 Running the Project using docker:
+
+### 💻 Ensure you have Docker installed and configured on your machine.
+
+1. Build youR docker image
+ ```sh
+docker build -t docker-coodesh .
+
+```
+
+2. Run the server
+ ```sh
+docker run -p 3000:3000 docker-coodesh
+```
+
+3. Access the application:
+```sh
+http://localhost:3000/
+```
 
 ## Project structure
 
